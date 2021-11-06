@@ -138,6 +138,28 @@ t = Post.all.first
 t.title = "Nuevo titulo"
 t.save()
 puts Post.all.first.title
-pust "Tarea 6. Hecha"
+puts "Tarea 6. Hecha"
 
 #Tarea 7:Eliminar la tercera publicación (haga que el modelo borre automáticamente todos los mensajes asociados con la tercera publicación cuando la elimines).
+
+f = Post.all.order("created_at asc")[2]
+f.destroy
+
+puts "Post existe? #{Post.where(id: f.id).count}"
+puts "Tarea 7. Hecha"
+
+#Tarea 8: Obtener todos los blog.
+
+puts Blog.all
+puts "Tarea 8. Hecha"
+
+#Tarea 9: Obtener todos los blog con id menor a 5.
+
+puts Blog.where("id < 5")
+# puts Blog.where("id <= 5")
+# puts Blog.where("id > 5")
+# puts Blog.where("id >= 5")
+# puts Blog.where("id = 5")
+# puts Blog.where("id != 5")
+
+puts "Tarea 9. Hecha"
